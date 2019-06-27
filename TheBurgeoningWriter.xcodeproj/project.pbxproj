@@ -74,7 +74,7 @@
 
 /* Begin PBXFileReference section */
 		18C494F321B0980200ACD57D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AE2624DE2103B42F0020E6DD /* TheBurgeoningWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBurgeoningWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2624DE2103B42F0020E6DD /* LoggingTransaction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoggingTransaction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2624E12103B42F0020E6DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE2624E32103B42F0020E6DD /* ArticleFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFeedViewController.swift; sourceTree = "<group>"; };
 		AE2624E82103B4300020E6DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		AE2624DF2103B42F0020E6DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE2624DE2103B42F0020E6DD /* TheBurgeoningWriter.app */,
+				AE2624DE2103B42F0020E6DD /* LoggingTransaction.app */,
 				AE4110D8210BDE4D00E91FA7 /* WritingIntents.appex */,
 				AE985EB6210FB4C600241C32 /* ArticleKit.framework */,
 			);
@@ -238,7 +238,7 @@
 			);
 			name = TheBurgeoningWriter;
 			productName = TheBurgeoningWriter;
-			productReference = AE2624DE2103B42F0020E6DD /* TheBurgeoningWriter.app */;
+			productReference = AE2624DE2103B42F0020E6DD /* LoggingTransaction.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AE4110D7210BDE4D00E91FA7 /* WritingIntents */ = {
@@ -537,7 +537,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.TheBurgeoningWriter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LoggingTransaction;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -558,7 +558,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.TheBurgeoningWriter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LoggingTransaction;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
