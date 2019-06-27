@@ -31,7 +31,7 @@ import ArticleKit
 
 class EditDraftViewController: UIViewController {
   let titleTextField = UITextField()
-  let contentsTextView = UITextView()
+  let contentsTextField = UITextField()
   
   var article: Article
   
@@ -45,7 +45,7 @@ class EditDraftViewController: UIViewController {
   }
   
   @objc func saveWasTapped() {
-    if let title = titleTextField.text, let content = contentsTextView.text {
+    if let title = titleTextField.text, let content = contentsTextField.text {
       article = ArticleManager.update(article: article, title: title, content: content)
       
       navigationController?.popViewController(animated: true)
@@ -53,7 +53,7 @@ class EditDraftViewController: UIViewController {
   }
   
   @objc func publishWasTapped() {
-    if let title = titleTextField.text, let content = contentsTextView.text {
+    if let title = titleTextField.text, let content = contentsTextField.text {
       article = ArticleManager.update(article: article, title: title, content: content)
       ArticleManager.publish(article)
       navigationController?.popViewController(animated: true)

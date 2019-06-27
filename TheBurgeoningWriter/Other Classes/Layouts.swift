@@ -43,8 +43,8 @@ extension ArticleFeedViewController {
     super.viewDidLoad()
     
     view.backgroundColor = .white
-    navigationItem.title = "Articles"
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Article",
+    navigationItem.title = "Transactions"
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Transaction",
                                                         style: .plain,
                                                         target: self,
                                                         action: #selector(ArticleFeedViewController.newArticleWasTapped))
@@ -102,24 +102,22 @@ extension NewArticleViewController {
     addShortcutButton.setTitleColor(.blue, for: .normal)
     
     // Navbar
-    navigationItem.title = "New Article"
+    navigationItem.title = "New Transaction"
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save Draft",
                                                         style: .plain,
                                                         target: self,
                                                         action: #selector(NewArticleViewController.saveWasTapped))
     
     // Text Fields
-    titleTextField.placeholder = "Title"
+    titleTextField.placeholder = "Category"
     titleTextField.delegate = self
     
-    contentsTextView.layer.cornerRadius = 4.0
-    contentsTextView.layer.borderColor = UIColor.black.cgColor
-    contentsTextView.layer.borderWidth = 1.0
-    contentsTextView.delegate = self
+    contentsTextField.placeholder = "Amount of money"
+    contentsTextField.delegate = self
     
     view.addSubview(addShortcutButton)
     view.addSubview(titleTextField)
-    view.addSubview(contentsTextView)
+    view.addSubview(contentsTextField)
   }
   
   override func viewDidLayoutSubviews() {
@@ -145,11 +143,11 @@ extension NewArticleViewController {
     
     let contentsTextViewYOrigin = titleTextField.bounds.height + titleTextField.frame.origin.y + 20.0
     let height = view.bounds.height - (titleTextField.center.y + titleTextField.bounds.height/2.0) - paddingBetween - bottomPadding
-    contentsTextView.frame = CGRect(x: 16.0, y: contentsTextViewYOrigin, width: view.bounds.width - 32.0, height: height)
+    contentsTextField.frame = CGRect(x: 16.0, y: contentsTextViewYOrigin, width: view.bounds.width - 32.0, height: height)
   }
   
   override func updateUserActivityState(_ activity: NSUserActivity) {
-    guard let title = titleTextField.text, let content = contentsTextView.text else { return }
+    guard let title = titleTextField.text, let content = contentsTextField.text else { return }
     
     activity.addUserInfoEntries(from: ["title": title, "content": content])
     
@@ -195,37 +193,35 @@ extension EditDraftViewController {
                                                           action: #selector(EditDraftViewController.saveWasTapped))]
     
     // Text Fields
-    titleTextField.placeholder = "Title"
+    titleTextField.placeholder = "Category"
     titleTextField.text = article.title
     
-    contentsTextView.layer.cornerRadius = 4.0
-    contentsTextView.layer.borderColor = UIColor.black.cgColor
-    contentsTextView.layer.borderWidth = 1.0
-    contentsTextView.text = article.content
+    contentsTextField.placeholder = "Amount of money"
+    contentsTextField.text = article.content
     
     view.addSubview(titleTextField)
-    view.addSubview(contentsTextView)
+    view.addSubview(contentsTextField)
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    
+
     let navbarHeight: CGFloat = 44.0
     var topPadding: CGFloat = 20.0
     var bottomPadding: CGFloat = 20.0
-    
+
     if let topInset = UIApplication.shared.keyWindow?.safeAreaInsets.top {
       topPadding += topInset
     }
     if let bottomInset = UIApplication.shared.keyWindow?.safeAreaInsets.bottom {
       bottomPadding += bottomInset
     }
-    
+
     titleTextField.bounds = CGRect(x: 0, y: 0, width: view.bounds.width - 32.0, height: 44.0)
     titleTextField.center = CGPoint(x: titleTextField.bounds.width/2.0 + 16.0, y: titleTextField.bounds.height/2.0 + topPadding + navbarHeight)
-    
+
     let contentsTextViewYOrigin = titleTextField.bounds.height + titleTextField.frame.origin.y + 20.0
     let height = view.bounds.height - navbarHeight - titleTextField.bounds.height - 20 - 20 - bottomPadding
-    contentsTextView.frame = CGRect(x: 16.0, y: contentsTextViewYOrigin, width: view.bounds.width - 32.0, height: height)
+    contentsTextField.frame = CGRect(x: 16.0, y: contentsTextViewYOrigin, width: view.bounds.width - 32.0, height: height)
   }
 }

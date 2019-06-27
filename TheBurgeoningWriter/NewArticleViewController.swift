@@ -32,11 +32,11 @@ import ArticleKit
 
 class NewArticleViewController: UIViewController {
   let titleTextField = UITextField()
-  let contentsTextView = UITextView()
+  let contentsTextField = UITextField()
   let addShortcutButton = UIButton()
   
   @objc func saveWasTapped() {
-    if let title = titleTextField.text, let content = contentsTextView.text {
+    if let title = titleTextField.text, let content = contentsTextField.text {
       let article = Article(title: title, content: content, published: false)
       ArticleManager.add(article: article)
       

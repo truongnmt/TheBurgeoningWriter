@@ -50,16 +50,16 @@ public class Article {
     let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
     
     // Title
-    activity.title = "Write a new article"
+    activity.title = "Logging a new transaction"
     
     // Subtitle
-    attributes.contentDescription = "Get those creative juices flowing!"
+    attributes.contentDescription = "Don't ask yourself where is all my money again!"
     
     // Thumbnail
     attributes.thumbnailData = thumbnail?.jpegData(compressionQuality: 1.0)
     
     // Suggested Phrase
-    activity.suggestedInvocationPhrase = "Time to write!"
+    activity.suggestedInvocationPhrase = "I have a new transaction!"
     
     activity.contentAttributeSet = attributes
     return activity
