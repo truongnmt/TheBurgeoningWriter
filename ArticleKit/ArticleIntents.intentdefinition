@@ -5,42 +5,60 @@
 	<key>INEnums</key>
 	<array/>
 	<key>INIntentDefinitionModelVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
+	<key>INIntentDefinitionNamespace</key>
+	<string>TAMeuy</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>17G65</string>
+	<string>18F203</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>10L176w</string>
+	<string>11M337n</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>10.0</string>
+	<string>11.0</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
 			<string>share</string>
+			<key>INIntentConfigurable</key>
+			<true/>
 			<key>INIntentDescription</key>
-			<string>Post the last article</string>
+			<string>Logging new transaction</string>
 			<key>INIntentDescriptionID</key>
 			<string>FLqRqJ</string>
+			<key>INIntentInput</key>
+			<string>category</string>
+			<key>INIntentKeyParameter</key>
+			<string>category</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>4</integer>
+			<integer>7</integer>
+			<key>INIntentManagedParameterCombinations</key>
+			<dict>
+				<key>category,amount</key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Logging transaction on${category}cost ${amount}</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>t8fgKq</string>
+					<key>INIntentParameterCombinationUpdatesLinked</key>
+					<true/>
+				</dict>
+			</dict>
 			<key>INIntentName</key>
 			<string>PostArticle</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>article,publishDate</key>
+				<key>category,amount</key>
 				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
-					<false/>
-					<key>INIntentParameterCombinationSubtitle</key>
-					<string>on ${publishDate}</string>
-					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>EOLDeP</string>
+					<key>INIntentParameterCombinationIsLinked</key>
+					<true/>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Post "${article}"</string>
+					<string>Logging transaction on${category}cost ${amount}</string>
 					<key>INIntentParameterCombinationTitleID</key>
-					<string>49xfDn</string>
+					<string>hu6Gov</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
@@ -50,8 +68,6 @@
 					<integer>1</integer>
 					<key>INIntentParameterName</key>
 					<string>article</string>
-					<key>INIntentParameterSupportsMultipleValues</key>
-					<false/>
 					<key>INIntentParameterTag</key>
 					<integer>3</integer>
 					<key>INIntentParameterType</key>
@@ -60,14 +76,154 @@
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>2</integer>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataCapitalization</key>
+						<string>None</string>
+					</dict>
 					<key>INIntentParameterName</key>
 					<string>publishDate</string>
-					<key>INIntentParameterSupportsMultipleValues</key>
-					<false/>
 					<key>INIntentParameterTag</key>
 					<integer>4</integer>
 					<key>INIntentParameterType</key>
 					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterCustomDisambiguation</key>
+					<true/>
+					<key>INIntentParameterDisplayName</key>
+					<string>Input category</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>8G5qFF</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>3</integer>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataCapitalization</key>
+						<string>None</string>
+						<key>INIntentParameterMetadataDefaultValue</key>
+						<string>Eating</string>
+						<key>INIntentParameterMetadataDefaultValueID</key>
+						<string>IsEdfk</string>
+					</dict>
+					<key>INIntentParameterName</key>
+					<string>category</string>
+					<key>INIntentParameterPromptDialogs</key>
+					<array>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Which category?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>9dVNiO</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Primary</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>There are ${count} options matching ‘${category}’.</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>JCVAer</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>DisambiguationIntroduction</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Which one?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>SlyZ4V</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>DisambiguationSelection</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Just to confirm, you wanted ‘${category}’?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>lVlPI2</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Confirmation</string>
+						</dict>
+					</array>
+					<key>INIntentParameterSupportsResolution</key>
+					<true/>
+					<key>INIntentParameterTag</key>
+					<integer>5</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayName</key>
+					<string>Input amount</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>YXpfci</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>4</integer>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataMaximumValue</key>
+						<integer>10000000</integer>
+						<key>INIntentParameterMetadataType</key>
+						<string>Field</string>
+					</dict>
+					<key>INIntentParameterName</key>
+					<string>amount</string>
+					<key>INIntentParameterPromptDialogs</key>
+					<array>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>How much did you paid?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>0cUefE</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Primary</string>
+						</dict>
+					</array>
+					<key>INIntentParameterSupportsResolution</key>
+					<true/>
+					<key>INIntentParameterTag</key>
+					<integer>7</integer>
+					<key>INIntentParameterType</key>
+					<string>Integer</string>
+					<key>INIntentParameterUnsupportedReasons</key>
+					<array>
+						<dict>
+							<key>INIntentParameterUnsupportedReasonCode</key>
+							<string>negativeNumbersNotSupported</string>
+							<key>INIntentParameterUnsupportedReasonDefault</key>
+							<true/>
+							<key>INIntentParameterUnsupportedReasonFormatString</key>
+							<string>${displayName} can't be negative.</string>
+							<key>INIntentParameterUnsupportedReasonFormatStringID</key>
+							<string>e9ek6y</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterUnsupportedReasonCode</key>
+							<string>greaterThanMaximumValue</string>
+							<key>INIntentParameterUnsupportedReasonDefault</key>
+							<true/>
+							<key>INIntentParameterUnsupportedReasonFormatString</key>
+							<string>${displayName} can't be higher than ${maximumValue}.</string>
+							<key>INIntentParameterUnsupportedReasonFormatStringID</key>
+							<string>v4AKbQ</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterUnsupportedReasonCode</key>
+							<string>lessThanMinimumValue</string>
+							<key>INIntentParameterUnsupportedReasonDefault</key>
+							<true/>
+							<key>INIntentParameterUnsupportedReasonFormatString</key>
+							<string>${displayName} can't be lower than ${minimumValue}.</string>
+							<key>INIntentParameterUnsupportedReasonFormatStringID</key>
+							<string>aZiYGq</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 			<key>INIntentResponse</key>
@@ -76,17 +232,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Sorry, but I couldn't post your article. ${failureReason}</string>
-						<key>INIntentResponseCodeFormatStringID</key>
-						<string>7P3eSq</string>
-						<key>INIntentResponseCodeName</key>
-						<string>failure</string>
-						<key>INIntentResponseCodeSuccess</key>
-						<false/>
-					</dict>
-					<dict>
-						<key>INIntentResponseCodeFormatString</key>
-						<string>Your article "${title}" was successfully posted on ${publishDate}. Nice work!</string>
+						<string>Your transaction on category "${category}" with amount "${amount}" was successfully saved. Nice work!</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>6I97C7</string>
 						<key>INIntentResponseCodeName</key>
@@ -94,20 +240,26 @@
 						<key>INIntentResponseCodeSuccess</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Sorry, but I couldn't save your transaction. ${failureReason}</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>7P3eSq</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>4</integer>
+				<integer>6</integer>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>1</integer>
 						<key>INIntentResponseParameterName</key>
-						<string>title</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
+						<string>category</string>
 						<key>INIntentResponseParameterTag</key>
-						<integer>4</integer>
+						<integer>5</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>String</string>
 					</dict>
@@ -115,11 +267,9 @@
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>2</integer>
 						<key>INIntentResponseParameterName</key>
-						<string>publishDate</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
+						<string>amount</string>
 						<key>INIntentResponseParameterTag</key>
-						<integer>2</integer>
+						<integer>6</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>String</string>
 					</dict>
@@ -128,8 +278,6 @@
 						<integer>3</integer>
 						<key>INIntentResponseParameterName</key>
 						<string>failureReason</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
 						<key>INIntentResponseParameterTag</key>
 						<integer>3</integer>
 						<key>INIntentResponseParameterType</key>
@@ -137,10 +285,8 @@
 					</dict>
 				</array>
 			</dict>
-			<key>INIntentRestrictions</key>
-			<integer>0</integer>
 			<key>INIntentTitle</key>
-			<string>Post Article</string>
+			<string>Post Transaction</string>
 			<key>INIntentTitleID</key>
 			<string>ReGphe</string>
 			<key>INIntentType</key>
@@ -151,5 +297,7 @@
 			<string>Post</string>
 		</dict>
 	</array>
+	<key>INTypes</key>
+	<array/>
 </dict>
 </plist>

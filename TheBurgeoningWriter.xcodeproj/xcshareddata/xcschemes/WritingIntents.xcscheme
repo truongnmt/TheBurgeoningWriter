@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE2624DD2103B42F0020E6DD"
-               BuildableName = "TheBurgeoningWriter.app"
+               BuildableName = "LoggingTransaction.app"
                BlueprintName = "TheBurgeoningWriter"
                ReferencedContainer = "container:TheBurgeoningWriter.xcodeproj">
             </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE2624DD2103B42F0020E6DD"
-            BuildableName = "TheBurgeoningWriter.app"
+            BuildableName = "LoggingTransaction.app"
             BlueprintName = "TheBurgeoningWriter"
             ReferencedContainer = "container:TheBurgeoningWriter.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE2624DD2103B42F0020E6DD"
-            BuildableName = "TheBurgeoningWriter.app"
+            BuildableName = "LoggingTransaction.app"
             BlueprintName = "TheBurgeoningWriter"
             ReferencedContainer = "container:TheBurgeoningWriter.xcodeproj">
          </BuildableReference>
